@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ai-traffic-commander
+    runtime: docker
+    plan: free
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: PYTHONUNBUFFERED
+        value: "1"
