@@ -64,6 +64,8 @@ def initialize_knowledge_base():
             chunks = _chunk_text(content, chunk_size=500, overlap=50)
             for i, chunk in enumerate(chunks):
                 # Get embedding via API
+                import time
+                time.sleep(2.0)  # Wait 2 seconds to respect the 15 RPM free tier rate limit
                 embedding = get_embedding(chunk, api_key)
                 _knowledge_chunks.append({
                     "content": chunk,
