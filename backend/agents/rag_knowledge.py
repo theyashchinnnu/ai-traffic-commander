@@ -14,21 +14,18 @@ _knowledge_chunks = []
 
 
 def get_embedding(text: str, api_key: str) -> list[float]:
-    """Get text embedding from Gemini API using httpx."""
-    # Using text-embedding-004 model
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={api_key}"
-    payload = {
-        "model": "models/text-embedding-004",
-        "content": {
-            "parts": [{"text": text}]
-        }
-    }
-    with httpx.Client(timeout=15.0) as client:
-        response = client.post(url, json=payload)
-        if response.status_code == 200:
-            return response.json()["embedding"]["values"]
-        else:
-            raise Exception(f"Gemini Embedding API error: {response.text}")
+    """Get text embedding from Gemini API using the official google-genai SDK."""
+    from google import genai
+    from google.genai import types
+    client = genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(api_version='v1')
+    )
+    response = client.models.embed_content(
+        model="gemini-embedding-2",
+        contents=text
+    )
+    return response.embeddings[0].values
 
 
 def initialize_knowledge_base():
