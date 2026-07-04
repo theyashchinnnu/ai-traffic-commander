@@ -159,7 +159,7 @@ class TrafficCommanderCrew:
             tasks=[task1_monitor, task2_congestion, task3_rag, task4_routes, task5_signals, task6_notify],
             process=Process.sequential,
             verbose=True,
-            max_rpm=30,
+            max_rpm=10,
         )
 
         result = crew.kickoff()
