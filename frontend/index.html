@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI City Traffic Commander</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="glass-panel auth-card">
+            <div class="text-center mb-4">
+                <h2 class="nav-logo justify-content-center">
+                    <span class="text-light">🚦 AI City</span>
+                    <span class="gradient-title">Traffic Commander</span>
+                </h2>
+                <p class="text-muted mt-2">Hackathon 2.0 AI Agentic Traffic Control System</p>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="tab-login">Login</div>
+                <div class="auth-tab" id="tab-register">Register</div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="form-login">
+                <div class="mb-3">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="username" class="form-control" placeholder="Enter username" required>
+                </div>
+                <div class="mb-4">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" class="form-control" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary-gradient w-100 py-3 mt-2">Sign In</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="form-register" style="display: none;">
+                <div class="mb-3">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" name="username" class="form-control" placeholder="Choose a username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" name="email" class="form-control" placeholder="Enter email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" name="password" class="form-control" placeholder="Create a password" required>
+                </div>
+                <div class="mb-4">
+                    <label for="register-confirmPassword">Confirm Password</label>
+                    <input type="password" id="register-confirmPassword" name="confirmPassword" class="form-control" placeholder="Re-enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary-gradient w-100 py-3 mt-2">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>
