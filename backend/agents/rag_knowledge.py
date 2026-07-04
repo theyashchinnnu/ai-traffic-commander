@@ -175,6 +175,6 @@ def create_rag_knowledge_agent(llm) -> Agent:
         tools=[rag_search_tool],
         llm=llm,
         verbose=True,
-        max_iter=10,
+        max_iter=3,
         max_execution_time=120,
     )
