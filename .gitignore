@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
+.env
+venv/
+env/
+.venv/
+chroma_db/
+backend/outputs/
+backend/chroma_db/
+*.egg-info/
+dist/
+build/
+.idea/
+.vscode/
+*.log
