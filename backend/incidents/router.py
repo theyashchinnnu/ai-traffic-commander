@@ -48,6 +48,9 @@ async def analyze_incident(
         db.refresh(incident)
 
     except Exception as e:
+        print("[ERROR] Incident analysis failed!")
+        import traceback
+        traceback.print_exc()
         incident.status = "error"
         incident.results = {"error": str(e), "traceback": traceback.format_exc()}
         db.commit()
