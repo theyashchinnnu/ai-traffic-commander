@@ -16,6 +16,6 @@ def create_public_notifier_agent(llm) -> Agent:
         tools=[alert_generator_tool, alert_file_writer_tool],
         llm=llm,
         verbose=True,
-        max_iter=10,
+        max_iter=3,
         max_execution_time=120,
     )
