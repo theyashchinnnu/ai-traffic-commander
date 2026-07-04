@@ -16,6 +16,6 @@ def create_signal_optimizer_agent(llm) -> Agent:
         tools=[signal_timing_optimizer_tool, signal_config_writer_tool],
         llm=llm,
         verbose=True,
-        max_iter=10,
+        max_iter=3,
         max_execution_time=120,
     )
