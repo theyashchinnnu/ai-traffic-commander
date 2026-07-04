@@ -167,6 +167,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
 
                 li.addEventListener('click', async () => {
+                    if (item.status === 'error') {
+                        try {
+                            showToast('Loading error details...', 'warning');
+                            const fullIncident = await api.getIncident(item.id);
+                            const err = fullIncident.results || {};
+                            alert(`❌ Incident Analysis Failed!\n\nError: ${err.error || 'Unknown Error'}\n\nTraceback:\n${err.traceback || 'No traceback available.'}`);
+                        } catch (error) {
+                            showToast('Failed to load error details.', 'danger');
+                        }
+                        return;
+                    }
                     if (item.status !== 'completed') {
                         showToast(`This incident is ${item.status}. Cannot view results.`, 'warning');
                         return;
