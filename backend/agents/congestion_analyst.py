@@ -16,6 +16,6 @@ def create_congestion_analyst_agent(llm) -> Agent:
         tools=[traffic_density_calculator_tool, historical_incidents_tool],
         llm=llm,
         verbose=True,
-        max_iter=10,
+        max_iter=3,
         max_execution_time=120,
     )
