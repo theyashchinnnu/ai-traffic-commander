@@ -23,7 +23,7 @@ JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_HOURS = 24
 
 # LLM Config
-LLM_MODEL = "gemini/gemini-2.0-flash"
+LLM_MODEL = "gemini/gemini-2.0-flash-lite"
 
 # Database URL
 DATABASE_URL = f"sqlite:///{DB_PATH}"
