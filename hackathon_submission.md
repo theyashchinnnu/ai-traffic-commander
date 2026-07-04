@@ -9,12 +9,12 @@ This file contains your official project summary and detailed instructions for p
 **AI City Traffic Commander** is a full-stack traffic management system resolving urban congestion and emergency routing. It integrates six CrewAI agents:
 1. **Traffic Monitor**: Extracts incident details (Weather & Geocoding APIs).
 2. **Congestion Analyst**: Predicts delays and severity (Density Calculator & Historical DB).
-3. **RAG Knowledge Expert**: Retrieves SOPs (ChromaDB search over local rules).
+3. **RAG Knowledge Expert**: Retrieves SOPs (Gemini Embeddings search over local rules).
 4. **Emergency Router**: Plans Ambulance, Police, and Fire routes.
 5. **Signal Optimizer**: Adjusts intersection timing and lane configurations.
 6. **Public Notifier**: Generates SMS, Email, and social alerts.
 
-ChromaDB RAG uses local markdown documents (SOPs, diversion policies) as knowledge sources. Multiple agents isolate domain-specific tasks, perform sequential tool calling (APIs, files, databases), and manage dependencies. Secure access uses JWT for dashboards and API keys for external IoT traffic sensors.
+Our custom RAG engine uses Gemini REST API Embeddings and in-memory cosine similarity, bypassing heavy databases to easily run under Render's 512MB limit. Multiple agents isolate tasks, perform sequential tool calling, and manage dependencies. Secure access uses JWT for dashboards and API keys for external traffic sensors.
 
 ---
 
