@@ -16,7 +16,7 @@ _knowledge_chunks = []
 def get_embedding(text: str, api_key: str) -> list[float]:
     """Get text embedding from Gemini API using httpx."""
     # Using text-embedding-004 model
-    url = f"https://generativetoolkit.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={api_key}"
     payload = {
         "model": "models/text-embedding-004",
         "content": {
