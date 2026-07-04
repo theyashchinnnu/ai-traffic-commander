@@ -13,8 +13,6 @@ try:
     print("[OK] sqlalchemy")
     import jwt
     print("[OK] jwt (pyjwt)")
-    import chromadb
-    print("[OK] chromadb")
     import crewai
     print("[OK] crewai")
     
