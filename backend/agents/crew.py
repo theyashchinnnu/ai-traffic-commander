@@ -178,7 +178,7 @@ class TrafficCommanderCrew:
             },
             "rag_knowledge": {
                 "agent": "Traffic Knowledge Expert (RAG)",
-                "tools_used": ["RAG Knowledge Search (ChromaDB)"],
+                "tools_used": ["RAG Knowledge Search (Gemini Embeddings)"],
                 "output": str(task3_rag.output) if task3_rag.output else "Processing...",
             },
             "emergency_routes": {
