@@ -14,6 +14,10 @@ SIGNAL_CONFIG_DIR.mkdir(parents=True, exist_ok=True)
 
 # Environment variables
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+if GOOGLE_API_KEY:
+    os.environ["GEMINI_API_KEY"] = GOOGLE_API_KEY
+    os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+
 JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "traffic-commander-secret-key-change-in-production")
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_HOURS = 24
